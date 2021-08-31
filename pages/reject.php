@@ -9,11 +9,10 @@
       $status = $_POST['status'];
       
       $q = "DELETE FROM friends where from_num = '$from' and to_num = '$to'";
-     
-      if($res = mysqli_query($conn , $q))
-      {
-        
-        echo strval($res)."\n";
+       print($q);
+      $res = mysqli_query($conn , $q);
+      if($res)
+      { 
          echo 'OK';
          http_response_code(200);
       }
