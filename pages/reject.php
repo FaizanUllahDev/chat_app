@@ -13,7 +13,7 @@
       if($res = mysqli_query($conn , $q))
       {
         
-        echo mysqli_num_rows($res);
+        echo strval($res)."\n";
          echo 'OK';
          http_response_code(200);
       }
