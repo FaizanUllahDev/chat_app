@@ -12,14 +12,17 @@
      
       if($res = mysqli_query($conn , $q))
       {
-       // echo $q;
         
-       // echo json_encode($q);
+        echo mysqli_num_rows($res);
          echo 'OK';
+         http_response_code(200);
       }
       else
+      {
       echo 'Error';
-  
+      
+      http_response_code(400);
+  }
 
       mysqli_close($conn);
   }
