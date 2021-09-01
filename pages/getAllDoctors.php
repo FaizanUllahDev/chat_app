@@ -4,7 +4,9 @@
 include('dbconnection.php');
 $data = array();
 
-$q = "SELECT * from doctor INNER JOIN friends ON doctor.number = friends.to_num  ";
+$num = $_POST['num'];
+
+$q = "SELECT * from doctor INNER JOIN friends ON doctor.number = friends.to_num where friends.to_num = '$num' or friends.from_num = '$num'";
 //echo $q;
 
               if($res = mysqli_query($conn , $q))
