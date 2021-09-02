@@ -8,7 +8,7 @@
       $role = $_POST['role'];
       if(true)
       {
-            $q = "SELECT name , status, img,  doctor.number FROM friends inner 
+            $q = "SELECT name , status, img, friends.from_num, doctor.number FROM friends inner 
                      join doctor on doctor.number = friends.to_num where friends.from_num = '$number' and  STATUS != 'Cancel' ";
 
                      if($res = mysqli_query($conn , $q))
