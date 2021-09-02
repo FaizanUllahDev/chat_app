@@ -4,8 +4,7 @@
 
   if(ISSET($_POST['num']))
   {
-      
-
+     
        $phone  = $_POST['num'];
   
           $q = "SELECT * from invitation where from_Doctor = '$phone' and status = 'Accept'" ;
