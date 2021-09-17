@@ -9,11 +9,12 @@
      $med = $_POST['med'];
      $fromDoc = $_POST['fromDoc'];
      $paNumber = $_POST['paNumber'];
+     $presentingIllness = $_POST['presentingIllness'];
      $curDate = $_POST['curDate'];
      
      
 
-     $q = "INSERT into formdataOfPatient (number,pro,med,fromDoc,paNumber,curDate) VALUES ('$number','$pro','$med','$fromDoc' , '$paNumber' , '$curDate')";
+     $q = "INSERT into formdataOfPatient (number,pro,med,fromDoc,paNumber,presentingIllness,curDate) VALUES ('$number','$pro','$med','$fromDoc' , '$paNumber' ,'$presentingIllness', '$curDate')";
      if(mysqli_query($conn,$q))
      {
         http_response_code(200);
