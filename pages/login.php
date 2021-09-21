@@ -5,15 +5,13 @@
 //echo $_POST["phone"];
 
 //Generate a random string.
-$token = openssl_random_pseudo_bytes(16);
+$token = openssl_random_pseudo_bytes(32);
 
 //Convert the binary data into hexadecimal representation.
 $token = bin2hex($token);
 
-//Print it out for example purposes.
-echo $token;
 
-data = array();
+
 
 
   if(!empty($_POST["phone"]))
@@ -26,9 +24,13 @@ data = array();
        if ($result=mysqli_query($conn,$q)) 
        if(mysqli_num_rows($result) ==  1 )
        {
-           data["role"] = "Patient";
-           data["token"] = $token;
-           echo data;
+           $data["role"] = "Patient";
+           $data["token"] = $token;
+          
+           
+           echo json_encode($data);
+           
+           http_response_code(200);
            $count = $count + 1;
        }
      else 
@@ -43,7 +45,15 @@ data = array();
            { 
              if( $rows = mysqli_fetch_assoc($result) )
              {
-                 echo 'Doctor_'.$rows["status"];
+                
+                 $data["role"] = "Doctor";
+                 $data["token"] = $token;
+                 $data['status'] = $rows["status"];
+                
+                 
+                 echo json_encode($data);
+                 
+            http_response_code(200);
                  $count = $count + 1;
              }
           }
@@ -56,7 +66,13 @@ data = array();
           if ($result=mysqli_query($conn,$q)) 
           if(mysqli_num_rows($result) ==  1 )
           {
-              echo 'Admin';
+            $data["role"] = "Admin";
+            $data["token"] = $token;
+           
+            
+            echo json_encode($data);
+            
+            http_response_code(200);
               $count = $count + 1;
           }
          // else $count = $count + 1;
@@ -71,14 +87,21 @@ data = array();
           {
              $rowspa = mysqli_fetch_assoc($resultpa) ;     
             // echo $rowspa;        
-              echo 'pa_'.$rowspa['asgTo'] ;
+            $data["role"] = "PA";
+            $data["token"] = $token;
+           
+            
+            echo json_encode($data);
+            http_response_code(200);
               $count = $count + 1;
           }
          // else $count = $count + 1;
   }
 
-  if($count ==  0)
+  if($count ==  0){
                echo 'Invalid Phone Number' ;
+              http_response_code(401);
+              }
          
       
             //   } else {
