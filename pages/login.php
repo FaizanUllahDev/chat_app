@@ -10,7 +10,15 @@ $token = openssl_random_pseudo_bytes(32);
 //Convert the binary data into hexadecimal representation.
 $token = bin2hex($token);
 
-
+// $token = null;
+// $headers = apache_request_headers();
+// if(isset($headers['Authorization'])){
+//   $matches = array();
+//   preg_match('/Token token="(.*)"/', $headers['Authorization'], $matches);
+//   if(isset($matches[1])){
+//     $token = $matches[1];
+//   }
+// } 
 
 
 
