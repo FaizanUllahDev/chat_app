@@ -15,7 +15,7 @@
 
 
 
-              $q = "SELECT chatroom.* , doctor.name FROM chatroom INNER JOIN doctor ON chatroom.fromid = doctor.number WHERE toid = '$num' ";
+              $q = "SELECT chatroom.* , doctor.name , doctor.img FROM chatroom INNER JOIN doctor ON chatroom.fromid = doctor.number WHERE toid = '$num' ";
       // echo $q;
     
                      if($res = mysqli_query($conn , $q))
@@ -37,7 +37,7 @@
                         }
                         else
                            {
-                              $q = "SELECT chatroom.* , patient.name FROM chatroom INNER JOIN patient ON chatroom.fromid = patient.number WHERE toid = '$num' ";
+                              $q = "SELECT chatroom.* , patient.name , patient.img FROM chatroom INNER JOIN patient ON chatroom.fromid = patient.number WHERE toid = '$num' ";
       // echo $q;
     
                      if($res = mysqli_query($conn , $q))
