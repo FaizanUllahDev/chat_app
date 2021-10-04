@@ -24,6 +24,7 @@
                          {
                            $dataRows = array();
                            while($rows = mysqli_fetch_assoc($res)){
+                              $rows['role'] = "doctor";
                               array_push($dataRows , $rows);
                               $id = $rows['id'];
                              // echo $rows['id'];
@@ -46,7 +47,7 @@
                          {
                            $dataRows = array();
                            while($rows = mysqli_fetch_assoc($res)){
-                              
+                              $rows['role'] = "patient";
                               array_push($dataRows , $rows);
                               $id = $rows['id'];
 
