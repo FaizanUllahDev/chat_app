@@ -37,7 +37,7 @@
                         }
                         else
                            {
-                              $q = "SELECT chatroom.* , patient.name , patient.img FROM chatroom INNER JOIN patient ON chatroom.fromid = patient.number WHERE toid = '$num' ";
+                              $q = "SELECT chatroom.* , patient.name , patient.id as mr , patient.img FROM chatroom INNER JOIN patient ON chatroom.fromid = patient.number WHERE toid = '$num' ";
       // echo $q;
     
                      if($res = mysqli_query($conn , $q))
@@ -46,8 +46,10 @@
                          {
                            $dataRows = array();
                            while($rows = mysqli_fetch_assoc($res)){
+                              
                               array_push($dataRows , $rows);
                               $id = $rows['id'];
+
                              // echo $rows['id'];
                               $q1 = "DELETE FROM chatroom WHERE id = '$id' ";
                              // echo $q1;
