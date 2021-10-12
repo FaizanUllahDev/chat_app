@@ -5,10 +5,12 @@
 
    $token = "";
    $headers = apache_request_headers();
-   if(isset($headers['Authorization']))
+ 
+   if(isset($headers['authorization']))
    {
         
-        $token =  $headers['Authorization'];
+        $token =  $headers['authorization'];
+        
        
         $q = "SELECT * FROM token where token = '$token' ";
         $res = mysqli_query($conn,$q);
@@ -18,7 +20,7 @@
             $token = $row['token'];
                 // if($token != "")
                 // {
-            echo "Granted !";
+            //echo "Granted !";
             http_response_code(200);
                 //}
                 // else
@@ -34,7 +36,6 @@
         }
    }
 
-   mysqli_close($conn);
     
 
 ?>

@@ -77,6 +77,7 @@ if($token != "")
 }
 else
 {
-   http_response_code(404);
+   echo $token;
+   http_response_code(500);
 }
 ?>
