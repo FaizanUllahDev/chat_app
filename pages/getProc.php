@@ -1,7 +1,10 @@
 <?php
 
   include('dbconnection.php');
+  include('check_header.php');
 
+if($token != "")
+{
   if(isset($_POST['number']))
   {
      $num = $_POST['number'] ;
@@ -17,6 +20,6 @@
      }
 
   }
-
+}
 
 ?>

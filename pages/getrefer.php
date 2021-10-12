@@ -3,11 +3,15 @@
 
 include('dbconnection.php');
 $data = array();
-if(isset($_POST['num']))
+include('check_header.php');
+
+if($token != "")
 {
- $num =  $_POST['num'];
+  if(isset($_POST['num']))
+  {
+    $num =  $_POST['num'];
         $q = "SELECT * from refer inner join patient on patient.number = refer.p_number where refer.doctorRefer  = '$num' ";
-//echo $q;
+
 
               if($res = mysqli_query($conn , $q))
               {
@@ -32,6 +36,6 @@ if(isset($_POST['num']))
               }
 
 
-            }
-
+  }
+}
 ?>

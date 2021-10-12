@@ -2,7 +2,10 @@
 
   include 'dbconnection.php' ;
 
+  include('check_header.php');
 
+if($token != "")
+{
   if(!empty($_POST["phone"]))
   {
       $file = '';
@@ -134,7 +137,7 @@
   }
   else
     echo 'Error Phone';
-
+}
 
 
 

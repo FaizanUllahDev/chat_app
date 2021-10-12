@@ -1,7 +1,10 @@
 <?php
 
   include('dbconnection.php');
+  include('check_header.php');
 
+if($token != "")
+{
   if(ISSET($_POST['type']))
   {
        //echo 'enter ';
@@ -112,7 +115,7 @@
   }
    else echo "Invalid Access Failed";
 
-  mysqli_close($conn);
+     mysqli_close($conn);
 
-
+}
 ?>

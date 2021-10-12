@@ -1,14 +1,18 @@
 <?php
 
 
-include('dbconnection.php');
-$data = array();
+    include('dbconnection.php');
+    include('check_header.php');
 
-$num = $_POST['num'];
+if($token != "")
+{
+    $data = array();
+
+    $num = $_POST['num'];
 
 
 
-$q = "SELECT * from doctor  ";
+                                  $q = "SELECT * from doctor  ";
                     
                                   if($res = mysqli_query($conn , $q))
                                   {
@@ -25,7 +29,10 @@ $q = "SELECT * from doctor  ";
                                   else
                                   http_response_code(404);
 
-// $q = "SELECT * from doctor inner JOIN friends ON doctor.number = friends.to_num where friends.to_num = '$num' or friends.from_num = '$num'";
+
+}
+
+                                  // $q = "SELECT * from doctor inner JOIN friends ON doctor.number = friends.to_num where friends.to_num = '$num' or friends.from_num = '$num'";
 
 
 //               if($res = mysqli_query($conn , $q))

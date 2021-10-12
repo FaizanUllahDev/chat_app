@@ -1,7 +1,10 @@
 <?php
 
   include('dbconnection.php');
+  include('check_header.php');
 
+if($token != "")
+{
   if(isset($_POST['phone']))
   {
      $num = $_POST['phone'] ;
@@ -29,5 +32,5 @@
       mysqli_close($conn);
   }
   else echo "No ";
-
+}
 ?>

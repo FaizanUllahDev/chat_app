@@ -2,7 +2,10 @@
    
    
   include 'dbconnection.php' ;
+  include('check_header.php');
 
+if($token != "")
+{
   if(isset($_POST['phone']))
   {
       $name = $_POST['name'] ;
@@ -63,7 +66,7 @@
     http_response_code(500);
   }
 
-
+}
 
 
 ?>

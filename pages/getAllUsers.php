@@ -2,6 +2,10 @@
 
   include('dbconnection.php');
  $data = array();
+ include('check_header.php');
+
+if($token != "")
+{
   
     $q = "SELECT * from patient  ";
        //echo $q;
@@ -45,4 +49,5 @@
       mysqli_close($conn);
  
 
+}
 ?>

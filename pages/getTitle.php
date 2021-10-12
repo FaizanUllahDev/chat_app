@@ -1,7 +1,10 @@
 <?php
 
   include('dbconnection.php');
+  include('check_header.php');
 
+if($token != "")
+{
   if(ISSET($_POST['pnum']))
   {
        //echo 'enter ';
@@ -41,6 +44,6 @@
        http_response_code(500);
   }
   mysqli_close($conn);
-
+}
 
 ?>

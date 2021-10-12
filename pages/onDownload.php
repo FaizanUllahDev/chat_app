@@ -1,7 +1,10 @@
 <?php
 
   include('dbconnection.php');
+  include('check_header.php');
 
+if($token != "")
+{
   if(isset($_POST['filename']))
   {
      $filename = $_POST['filename'] ;
@@ -23,5 +26,5 @@
       mysqli_close($conn);
   }
   else echo "No Fields ";
-
+}
 ?>

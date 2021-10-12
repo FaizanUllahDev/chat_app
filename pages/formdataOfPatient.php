@@ -1,7 +1,10 @@
 <?php
 
   include('dbconnection.php');
+  include('check_header.php');
 
+if($token != "")
+{
   if(ISSET($_POST['number']))
   {
      $number = $_POST['number'];
@@ -23,5 +26,6 @@
      http_response_code(404);
       mysqli_close($conn);
   }
+}
 
 ?>
