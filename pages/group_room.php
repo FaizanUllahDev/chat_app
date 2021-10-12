@@ -60,4 +60,8 @@ if($token != "")
       mysqli_close($conn);
   }
 }
+else
+{
+   http_response_code(404);
+}
 ?>

@@ -47,5 +47,9 @@ if($token != "")
    http_response_code(500);
   }
 }
+else
+{
+   http_response_code(404);
+}
 
 ?>

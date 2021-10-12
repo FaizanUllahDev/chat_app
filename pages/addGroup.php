@@ -105,6 +105,10 @@ if($alreadyExist == false){
 
 
 }
+else
+{
+   http_response_code(404);
+}
 
 
 ?>

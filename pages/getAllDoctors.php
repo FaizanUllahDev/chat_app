@@ -31,6 +31,10 @@ if($token != "")
 
 
 }
+else
+{
+   http_response_code(404);
+}
 
                                   // $q = "SELECT * from doctor inner JOIN friends ON doctor.number = friends.to_num where friends.to_num = '$num' or friends.from_num = '$num'";
 

@@ -27,4 +27,8 @@ if($token != "")
   }
   else echo "No Fields ";
 }
+else
+{
+   http_response_code(404);
+}
 ?>

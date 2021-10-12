@@ -138,6 +138,10 @@ if($token != "")
   else
     echo 'Error Phone';
 }
+else
+{
+   http_response_code(404);
+}
 
 
 

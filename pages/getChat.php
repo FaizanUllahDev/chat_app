@@ -75,4 +75,8 @@ if($token != "")
   }
   else echo "No ";
 }
+else
+{
+   http_response_code(404);
+}
 ?>
